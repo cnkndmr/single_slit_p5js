@@ -49,7 +49,7 @@ var wall25 = 0;
 
 function setup() {
 	createCanvas(600, 400);
-	createDiv('<p><h1>Single-slit particle experiment.</h1><h3>Controls:</h3><b>W Key</b>: Increase the slit width.<br><b>S Key</b>: Decrease the slit width.<br><b>D Key</b>: Increase the particle count.<br>(<b>CAUTION</b>: Increasing particle count may cause slow downs on computer!)<br><b>A Key</b>: Decrease the particle count.<br><b>1 Key</b>: Increase the particle gun range.<br><b>2 Key</b>: Decrease the particle gun range.<br></p>');
+	createDiv('<p><h1>Single-slit diffraction and the uncertainty principle.</h1><h3>Controls:</h3><b>W Key</b>: Increase the slit width.<br><b>S Key</b>: Decrease the slit width.<br><b>D Key</b>: Increase the particle count.<br>(<b>CAUTION</b>: Increasing particle count may cause slow downs on computer!)<br><b>A Key</b>: Decrease the particle count.<br><b>1 Key</b>: Increase the particle gun range.<br><b>2 Key</b>: Decrease the particle gun range.<br></p>');
 }
 
 function draw() {
@@ -74,11 +74,11 @@ function draw() {
 			particles.splice(i, 1);
 		}
 	}
-	if (keyIsDown(50) && vert_v > 0.1) {
-		vert_v -= 0.05;
+	if (keyIsDown(50) && vert_v > 0.2) {
+		vert_v -= 0.01;
 	}
 	if (keyIsDown(49) && vert_v < 5) {
-		vert_v += 0.05;
+		vert_v += 0.01;
 	}
 	if (keyIsDown(68) && par_count < 20) {
 		par_count += 1;
@@ -155,7 +155,6 @@ class Particle {
 		this.alpha -= 1;
 		if ((this.x >= rx && this.y <= rh && this.x <= rx + rw) || (this.x >= rx && this.y >= r2y && this.x <= rx + rw)) {
 			this.alpha = 0;
-			// this.vx *= -1;
 		}
 		if ((this.x > rx && this.x < rx + rw && this.y > rh && this.y < rh + 1) || (this.x > rx && this.x < rx + rw && this.y < r2y && this.y > r2y - 1)) {
 			this.vy *= -1;
