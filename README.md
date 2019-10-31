@@ -1,1 +1,1 @@
-Live demo: [https://cnkndmr.gitlab.io/single-slit.html](https://cnkndmr.gitlab.io/single-slit.html)
+Live demo: [https://cnkndmr.github.io/single-slit.html](https://cnkndmr.github.io/single-slit.html)
